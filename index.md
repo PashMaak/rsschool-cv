@@ -346,4 +346,4 @@ University of Birmingham (2024–current)
 ## English
 Official TOEFL certificate with a score of 82 (2024)  
 Official Duolingo English Test score of 125 (2024)  
-Official Academic English Certificate – C2 level (2025) 
+Official Academic English Certificate – C2 level (2025)
