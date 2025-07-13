@@ -92,7 +92,7 @@ signed main() {
         int cur = get(l-1, r);
         int x = std::lower_bound(b, b+n, std::make_pair(cur, l-1)) - b;
         int y = std::upper_bound(b, b+n, std::make_pair(cur, r-1)) - b;
-        std::cout << r-l+1 - y+x << '\n';
+        std::cout &lt;&lt; r-l+1 - y+x &lt;&lt; '\n';
     }
     return 0;
 }
