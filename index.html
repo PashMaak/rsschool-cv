@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saloev Anushervon - CV</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <h1>Saloev Anushervon</h1>
-  <img src="https://image.tmdb.org/t/p/original/g4yz1mu1CV5irtLvXA5zXA1imBC.jpg" alt="My Photo" />
+  <img src="https://image.tmdb.org/t/p/original/g4yz1mu1CV5irtLvXA5zXA1imBC.jpg" alt="My Photo">
   <p>
     📍 Birmingham, England<br/>
     📧 saloev05@gmail.com<br/>
-    📞 +992 988337676 / +44 07502550876<br/>
+    📞 +992 988337676 +44 07502550876<br/>
     💬 Discord: @pashmak.<br/>
-    <a href="https://github.com/PashMaak">GitHub</a> • 
-    <a href="https://www.linkedin.com/in/anushervon-saloev-4450452b4/">LinkedIn</a> • 
+    <a href="https://github.com/PashMaak">GitHub</a> •
+    <a href="https://www.linkedin.com/in/anushervon-saloev-4450452b4/">LinkedIn</a> •
     <a href="https://codeforces.com/profile/Pash_Mak">Codeforces</a>
   </p>
 
@@ -24,7 +24,7 @@
 
   <h2>About Me</h2>
   <p>
-    Since 10th grade, I have been passionate about competitive programming. For a year, I dedicated at least 8 hours a day to learning C/C++ in order to participate in prestigious olympiads. By the end of 11th grade, I won prizes at the Republican Olympiad in Tajikistan and at the 
+    Since 10th grade, I have been passionate about competitive programming. For a year, I dedicated at least 8 hours a day to learning C/C++ in order to participate in prestigious olympiads. By the end of 11th grade, I won prizes at the Republican Olympiad in Tajikistan and at the
     <a href="https://neerc.ifmo.ru/school/archive/2023-2024/ru-olymp-team-russia-2023-standings.html">Eurasian Olympiad</a>.
   </p>
   <p>
@@ -48,7 +48,7 @@
 
   <h3>C++</h3>
   <p>
-    <a href="https://codeforces.com/contest/474/problem/F">Problem</a> • 
+    <a href="https://codeforces.com/contest/474/problem/F">Problem</a> •
     <a href="https://codeforces.com/contest/474/submission/253479244">Solution</a>
   </p>
   <pre><code>/*Pash_Mak*/
@@ -92,7 +92,7 @@ signed main() {
         int cur = get(l-1, r);
         int x = std::lower_bound(b, b+n, std::make_pair(cur, l-1)) - b;
         int y = std::upper_bound(b, b+n, std::make_pair(cur, r-1)) - b;
-        std::cout << r-l+1 - y+x << '\n';
+        std::cout << (r - l + 1) - (y - x) << '\n';
     }
     return 0;
 }
@@ -100,7 +100,7 @@ signed main() {
 
   <h3>C</h3>
   <p>
-    <a href="https://codeforces.com/gym/104344/problem/E">Problem</a> • 
+    <a href="https://codeforces.com/gym/104344/problem/E">Problem</a> •
     <a href="https://codeforces.com/gym/104344/submission/212676076">Solution</a>
   </p>
   <pre><code>#include &lt;stdio.h&gt;
@@ -184,7 +184,7 @@ def plot_setup():
     ax.spines['left'].set_color('None')
     ax.spines['top'].set_color('black')
     ax.spines['bottom'].set_color('None')
-    
+
     plt.xlim(-4, 4)
     plt.ylim(-4, 4)
     plt.xticks(range(-4, 5), color='blue')
@@ -207,13 +207,13 @@ def scatter_plot(player_number):
         ax.plot([hits.x for hits in Player[0]], [hits.y for hits in Player[0]], color='black', linestyle='None', marker='+', label='Player 1')
         ax.plot([hits.x for hits in Player[1]], [hits.y for hits in Player[1]], color='green', linestyle='None', marker='x', label='Player 2')
         ax.plot([hits.x for hits in Player[2]], [hits.y for hits in Player[2]], color='blue', linestyle='None', marker='o', label='Player 3')
-        
+
         ax.set_title(f'Dart Hits for All Players', color='red')
         plt.legend(loc='upper left')
     else:
         ax.plot([hits.x for hits in Player[player_number - 1]], [hits.y for hits in Player[player_number - 1]], color='black', linestyle='None', marker='+')
-        ax.set_title(f'Dart Hits for Player {player_number}', color='red')  
-    
+        ax.set_title(f'Dart Hits for Player {player_number}', color='red')
+
     # Displaying the hits by players
     plot_setup()
     plt.show()
@@ -292,7 +292,7 @@ def analysis_of_data():
                 current_scores[ind][0] += 5
             elif distance <= 3:
                 current_scores[ind][0] += 1
-            
+
             if not first_place and current_scores[ind][0] == total_scores[2]:
                 first_place = f'Player {ind + 1}'
             elif not second_place and current_scores[ind][0] == total_scores[1]:
@@ -307,7 +307,7 @@ def analysis_of_data():
             player_stats[player_number][0] += hit.x
             player_stats[player_number][1] += hit.y
             player_stats[player_number][2] += 1 # length
-    
+
     for player_number in range(3):
         avg_x = player_stats[player_number][0] / player_stats[player_number][2]
         avg_y = player_stats[player_number][1] / player_stats[player_number][2]
@@ -316,7 +316,7 @@ def analysis_of_data():
         avg_x = math.ceil(avg_x * 100) / 100
         avg_y = math.ceil(avg_y * 100) / 100
         print(f'Player {player_number + 1} scored {score_board[player_number][4]} and have an average displacement of ({avg_x}, {avg_y})')
-    
+
     print(f'\nThird place belongs to {third_place}')
     print(f'Second place belongs to {second_place}')
     print(f'First place and the winner of the game is {first_place} 👑')
