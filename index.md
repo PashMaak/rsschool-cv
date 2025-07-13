@@ -1,168 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saloev Anushervon - CV</title>
-  <style>
-    body {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      font-family: sans-serif;
-      line-height: 1.6;
-      background: #f7f9fc;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    pre {
-      background: #f1f1f1;
-      padding: 10px;
-      overflow-x: auto;
-    }
-    code {
-      font-family: Consolas, monospace;
-      color: #c7254e;
-    }
-    img {
-      max-width: 150px;
-      border-radius: 8px;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 2em 0;
-    }
-    a {
-      color: #0066cc;
-    }
-    ul {
-      padding-left: 20px;
-    }
-  </style>
-</head>
-<body>
+# Saloev Anushervon
 
-  <h1>Saloev Anushervon</h1>
-  <img src="https://image.tmdb.org/t/p/original/g4yz1mu1CV5irtLvXA5zXA1imBC.jpg" alt="My Photo" />
-  <p>
-    📍 Birmingham, England<br/>
-    📧 saloev05@gmail.com<br/>
-    📞 +992 988337676 / +44 07502550876<br/>
-    💬 Discord: @pashmak.<br/>
-    <a href="https://github.com/PashMaak">GitHub</a> • 
-    <a href="https://www.linkedin.com/in/anushervon-saloev-4450452b4/">LinkedIn</a> • 
-    <a href="https://codeforces.com/profile/Pash_Mak">Codeforces</a>
-  </p>
+![My Photo](https://image.tmdb.org/t/p/original/g4yz1mu1CV5irtLvXA5zXA1imBC.jpg)  
+📍 Birmingham, England  
+📧 saloev05@gmail.com  
+📞 +992 988337676 / +44 07502550876  
+💬 Discord: @pashmak.  
+[GitHub](https://github.com/PashMaak) • [LinkedIn](https://www.linkedin.com/in/anushervon-saloev-4450452b4/) • [Codeforces](https://codeforces.com/profile/Pash_Mak)
 
-  <hr/>
+---
 
-  <h2>About Me</h2>
-  <p>
-    Since 10th grade, I have been passionate about competitive programming. For a year, I dedicated at least 8 hours a day to learning C/C++ in order to participate in prestigious olympiads. By the end of 11th grade, I won prizes at the Republican Olympiad in Tajikistan and at the 
-    <a href="https://neerc.ifmo.ru/school/archive/2023-2024/ru-olymp-team-russia-2023-standings.html">Eurasian Olympiad</a>.
-  </p>
-  <p>
-    I was admitted to the University of Birmingham, where I am currently studying.
-  </p>
-  <p>
-    I also enjoy playing various competitive games, such as CS2.
-  </p>
+## About Me
+Since 10th grade, I have been passionate about competitive programming. For a year, I dedicated at least 8 hours a day to learning C/C++ in order to participate in prestigious olympiads. By the end of 11th grade, I won prizes at the Republican Olympiad in Tajikistan and at the [Eurasian Olympiad](https://neerc.ifmo.ru/school/archive/2023-2024/ru-olymp-team-russia-2023-standings.html).
 
-  <hr/>
+I was admitted to the University of Birmingham, where I am currently studying.
 
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Programming Languages:</strong> C, C++, Python</li>
-    <li><strong>Languages:</strong> English (C2), Russian (Native), Tajik/Farsi (Native)</li>
-  </ul>
+I also enjoy playing various competitive games, such as CS2.
 
-  <hr/>
+---
 
-  <h2>Code Examples</h2>
+## Skills
 
-  <h3>C++</h3>
-  <p>
-    <a href="https://codeforces.com/contest/474/problem/F">Problem</a> • 
-    <a href="https://codeforces.com/contest/474/submission/253479244">Solution</a>
-  </p>
-  <pre><code>/*Pash_Mak*/
+- **Programming Languages:** C, C++, Python
+- **Languages:** English (C2), Russian (Native), Tajik/Farsi (Native)
+
+---
+
+## Code Examples
+
+# C++ [Problem](https://codeforces.com/contest/474/problem/F) • [Solution](https://codeforces.com/contest/474/submission/253479244)
+
+```cpp
+/*Pash_Mak*/
 #include "bits/stdc++.h"
-
+ 
 using ll = long long;
 using str = std::string;
-
-const int N = 1 &lt;&lt; 17;
-int n, tree[N &lt;&lt; 1];
-std::pair&lt;int,int&gt; b[N];
-
+ 
+const int N = 1 << 17;
+int n, tree[N << 1];
+std::pair<int,int> b[N];
+ 
 int get(int l, int r) {
     l += n, r += n;
     int ans = 0;
-    while (l &lt; r) {
-        if (l &amp; 1) ans = std::gcd(ans, tree[l++]);
-        if (r &amp; 1) ans = std::gcd(ans, tree[--r]);
-        l &gt;&gt;= 1, r &gt;&gt;= 1;
+    while (l < r) {
+        if (l & 1) ans = std::gcd(ans, tree[l++]);
+        if (r & 1) ans = std::gcd(ans, tree[--r]);
+ 
+        l >>= 1, r >>= 1;
     }
     return ans;
 };
-
+ 
 signed main() {
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(nullptr);
+ 
     std::cin >> n;
-    for (int i = 0; i &lt; n; i++) {
+ 
+    for (int i = 0; i < n; i++) {
         std::cin >> tree[i+n];
         b[i] = {tree[i+n], i};
     }
-    for (int i = n-1; i &gt; 0; i--) {
-        tree[i] = std::gcd(tree[i &lt;&lt; 1], tree[i &lt;&lt; 1 | 1]);
+    for (int i = n-1; i > 0; i--) {
+        tree[i] = std::gcd(tree[i << 1], tree[i << 1 | 1]);
     }
     std::sort(b, b+n);
+ 
     int q;
     std::cin >> q;
+ 
     while (q--) {
         int l, r;
         std::cin >> l >> r;
+ 
         int cur = get(l-1, r);
         int x = std::lower_bound(b, b+n, std::make_pair(cur, l-1)) - b;
         int y = std::upper_bound(b, b+n, std::make_pair(cur, r-1)) - b;
+ 
         std::cout << r-l+1 - y+x << '\n';
     }
+ 
     return 0;
 }
-  </code></pre>
-
-  <h3>C</h3>
-  <p>
-    <a href="https://codeforces.com/gym/104344/problem/E">Problem</a> • 
-    <a href="https://codeforces.com/gym/104344/submission/212676076">Solution</a>
-  </p>
-  <pre><code>#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-#include &lt;limits.h&gt;
+```
+# C [Problem](https://codeforces.com/gym/104344/problem/E) • [Solution](https://codeforces.com/gym/104344/submission/212676076)
+```c
+#include <stdio.h>
+#include <math.h>
+#include <limits.h>
 
 int main() {
     int V;
     scanf("%d", &V);
+
     long long res = LLONG_MAX;
-    for (int a = 1; a * a &lt;= V; a++) {
-        for (int b = 1; b * b &lt;= V; b++) {
-            if (V % (a * b) != 0) continue;
+
+    for (int a = 1; a * a <= V; a++) {
+        for (int b = 1; b * b <= V; b++) {
+            if (V % (a * b) != 0) {
+                continue;
+            }
             int c = V / (a * b);
             res = fmin(res, 2 * (a * b + b * c + a * c));
         }
     }
+
     printf("%lld\n", res);
+
     return 0;
 }
-  </code></pre>
+```
 
-  <h3>Python</h3>
-  <p><strong>Brief Statement:</strong> You are given data about dart hits from three players, and your task is to convert, analyze, and present this data to the user.</p>
-  <pre><code># Importing Libraries
+# Python Brief Statement: You are given data about dart hits from three players, and your task is to convert, analyze, and present this data to the user.
+
+```py
+# Importing Libraries
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
@@ -376,28 +329,21 @@ while True:
         break
     else:
         print('Invalid input please try again!')
-  </code></pre>
+```
 
-  <hr/>
+---
+## Working Experience
+No working experience
 
-  <h2>Work Experience</h2>
-  <p>No working experience</p>
+---
 
-  <hr/>
+## Education
+Private School Hotam and "PV" (2012–2024)  
+University of Birmingham (2024–current)
 
-  <h2>Education</h2>
-  <p>Private School Hotam and "PV" (2012–2024)<br/>
-     University of Birmingham (2024–current)
-  </p>
+---
 
-  <hr/>
-
-  <h2>English</h2>
-  <p>
-    Official TOEFL certificate with a score of 82 (2024)<br/>
-    Official Duolingo English Test score of 125 (2024)<br/>
-    Official Academic English Certificate – C2 level (2025)
-  </p>
-
-</body>
-</html>
+## English
+Official TOEFL certificate with a score of 82 (2024)  
+Official Duolingo English Test score of 125 (2024)  
+Official Academic English Certificate – C2 level (2025)
