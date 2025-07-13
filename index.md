@@ -5,7 +5,7 @@
 📧 saloev05@gmail.com  
 📞 +992 988337676 / +44 07502550876  
 💬 Discord: @pashmak.  
-[GitHub](https://github.com/PashMaak) • [LinkedIn](https://www.linkedin.com/in/anushervon-saloev-4450452b4/) • [Codeforces](https://codeforces.com/profile/Pash_Mak)
+[GitHub](https://github.com/PashMaak) • [LinkedIn](https://www.linkedin.com/in/anushervon-saloev-4450452b4/) • [Codeforces](https://codeforces.com/profile/Pash_Mak) 
 
 ---
 
